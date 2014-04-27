@@ -1,0 +1,6 @@
+#ifndef _ENUMS_H_
+#define _ENUMS_H_
+//enum gamestate {ALIVE=0,DEAD,EXITING};
+//extern State;
+#endif _ENUMS_H_
+

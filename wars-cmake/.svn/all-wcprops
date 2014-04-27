@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/14/branches/wars
+END
+stats.c
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/14/branches/wars/stats.c
+END
+define.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/14/branches/wars/define.h
+END
+player.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/14/branches/wars/player.h
+END
+screens.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/14/branches/wars/screens.c
+END
+stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/14/branches/wars/stats.h
+END
+screens.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/14/branches/wars/screens.h
+END
+map.c
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/14/branches/wars/map.c
+END
+util.c
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/14/branches/wars/util.c
+END
+state.c
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/14/branches/wars/state.c
+END
+map.h
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/14/branches/wars/map.h
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/14/branches/wars/util.h
+END
+maintest.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/14/branches/wars/maintest.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/14/branches/wars/main.c
+END
+state.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/14/branches/wars/state.h
+END
+enums.c
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/14/branches/wars/enums.c
+END
+enums.h_
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/14/branches/wars/enums.h_
+END
+player.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/14/branches/wars/player.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/14/branches/wars/Makefile
+END

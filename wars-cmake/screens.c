@@ -1,0 +1,227 @@
+#include "screens.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <curses.h>
+#include "define.h"
+#include "map.h"
+#include "stats.h"
+#include "state.h"
+#include "util.h"
+int inputok=1;
+
+int oldcur;
+WINDOW *menuwin;
+WINDOW *mainwin;
+WINDOW *drawwin;
+
+void initWindows()
+{
+	mainwin = initscr();
+	drawwin = mainwin;
+	noecho();
+	menuwin = subwin(mainwin,SUBWINROWS,SUBWINCOLS,2,3);
+	drawwin = menuwin;
+
+	oldcur = curs_set(0);
+	box(mainwin,0,0);
+//	box(menuwin,0,0);
+}
+
+void destroyWindows()
+{
+	curs_set(oldcur);
+	delwin(menuwin);
+	delwin(mainwin);
+	endwin();
+	refresh();
+}
+
+int showGame()
+{
+	updatePlayer();
+	regenerateMap();
+	drawMap(mainwin);
+	return 0;
+}
+
+
+//extern poinscounter;
+int showDead()
+{
+	char *outbuf;
+	outbuf = malloc(256);	
+	werase(drawwin);
+	wmove(drawwin,1,0);
+	
+	sprintf(outbuf," ASCIISKI by Artur Skonecki\n\n\n"
+			" :==:==:==:==:==:YOU ARE DEAD:==:==:==:==:==:\n\n"
+			" Your score: %d points\n\n"
+			" You can now:\n"
+			" Q - exit game\n"
+			" C - continue playing\n"
+			" R - restart game\n\n",
+			getSavedPoints()
+			);
+	waddstr(drawwin,outbuf);
+	if(inputok==0) waddstr(drawwin," There is no such option. Try again.\n");
+	waddstr(drawwin," >> ");
+	box(drawwin,0,0);
+	refresh();
+	wrefresh(drawwin);
+	int ch= mygetch();
+	switch(ch)
+	{
+		case 113:
+			setState(STATE_EXITING);
+			inputok=1;
+			break;
+		case 'c'://continue playing
+			setState(STATE_ALIVE);
+
+			inputok=1;
+			break;
+		case 114://restartgame
+			setState(STATE_RESTART);
+			inputok=1;
+			break;
+		default:
+			inputok=0;
+			break;
+	}
+	free(outbuf);
+	return 0;
+}
+
+int showPause()
+{
+	int xStart = MAPCOLS/2-5;
+	int yStart = MAPROWS;
+	wmove(mainwin,yStart,xStart);
+	waddstr(mainwin,"__________");
+	wmove(mainwin,yStart+1,xStart);
+	waddstr(mainwin,"||PAUSED||");
+	wmove(mainwin,yStart+2,xStart);
+	waddstr(mainwin,"^^^^^^^^^^");
+	refresh();
+	int ch= mygetch();
+	switch(ch)
+	{
+		case 113:
+			setState(STATE_EXITING);
+			inputok=1;
+			break;
+		case 'c'://continue playing
+			setState(STATE_ALIVE);
+
+			inputok=1;
+			break;
+		case 114://restartgame r
+			setState(STATE_RESTART);
+			inputok=1;
+			break;
+		case 112://pause p
+			setState(STATE_ALIVE);
+			inputok=1;
+			break;
+		default:
+			inputok=0;
+			break;
+	}
+	return 0;
+
+}
+
+int showMenu()
+{
+	werase(drawwin);
+	wmove(drawwin,1,0);
+	char outputBuf[256];
+		//system("clear");
+	sprintf(outputBuf," ASCIISKI by Artur Skonecki\n\n\n"
+			" :==:==:==:==:==:MAIN MENU:==:==:==:==:==:\n\n"
+			" WARNING: game recognizes only lower-case letters\n\n"
+			" You can now:\n"
+			" S - start game\n"
+			" C - continue game\n"
+			" H - show help\n"
+			" Q - exit game\n\n"
+			);
+	
+	waddstr(drawwin,outputBuf);
+	if(inputok==0) waddstr(drawwin," There is no such option. Try again.\n");
+	waddstr(drawwin," >> ");
+	box(drawwin,0,0);
+	refresh();
+	wrefresh(drawwin);
+	int ch= mygetch();
+	switch(ch)
+	{
+		case 113:
+			setState(STATE_EXITING);
+			inputok=1;
+			break;
+		case 'h'://showHelp
+			setState(STATE_HELP);
+			inputok=1;
+			break;
+		case 'c':
+			setState(STATE_ALIVE);
+			break;
+		case 115://start game
+			setState(STATE_RESTART);
+			inputok=1;
+			break;
+		default:
+			inputok=0;
+			break;
+	}
+	return 0;
+
+}
+
+int showHelp()
+{
+	werase(drawwin);
+	wmove(drawwin,1,0);
+	waddstr(drawwin," ASCIISKI by Artur Skonecki\n"
+			" :==:==:==:==:==:HELP:==:==:==:==:==:\n\n"
+			" You are an adventurous skier.\n"
+			" Your mission: survive as long as possible\n\n"
+			" WARNING: game recognizes only lower-case letters\n\n"
+			" CONTROLS:\n"
+			" a - move left\n"
+			" d - move right\n"
+			" h - show this help\n"
+			" m - return to menu\n"
+			" q - exit\n\n"
+			" You can now:\n"
+			" M - return to menu\n"
+			" R - return to game\n\n"
+
+			);
+	if(inputok==0) waddstr(drawwin," There is no such option. Try again.\n");
+	waddstr(drawwin," >> ");
+	box(drawwin,0,0);
+	refresh();
+	wrefresh(drawwin);
+	int ch= mygetch();
+	switch(ch)
+	{
+		case 113:
+			setState(STATE_EXITING);
+			inputok=1;
+			break;
+		case 'm':
+			setState(STATE_MENU);
+			inputok=1;
+			break;
+		case 114:
+			setState(STATE_ALIVE);
+			inputok=1;
+			break;
+		default:
+			inputok=0;
+			break;
+	}
+	return 0;
+}

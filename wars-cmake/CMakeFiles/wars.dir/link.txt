@@ -1,0 +1,1 @@
+/usr/bin/gcc     CMakeFiles/wars.dir/main.o CMakeFiles/wars.dir/map.o CMakeFiles/wars.dir/screens.o CMakeFiles/wars.dir/state.o CMakeFiles/wars.dir/util.o CMakeFiles/wars.dir/stats.o CMakeFiles/wars.dir/player.o  -o wars -rdynamic -lncurses 

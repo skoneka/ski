@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/13/trunk/ski
+END
+stats.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/13/trunk/ski/stats.c
+END
+define.h
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/13/trunk/ski/define.h
+END
+screens.c
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/13/trunk/ski/screens.c
+END
+stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/13/trunk/ski/stats.h
+END
+screens.h
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/13/trunk/ski/screens.h
+END
+map.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/13/trunk/ski/map.c
+END
+util.c
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/13/trunk/ski/util.c
+END
+state.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/13/trunk/ski/state.c
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/13/trunk/ski/util.h
+END
+map.h
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/13/trunk/ski/map.h
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/13/trunk/ski/main.c
+END
+maintest.c
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/13/trunk/ski/maintest.c
+END
+state.h
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/13/trunk/ski/state.h
+END
+enums.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/13/trunk/ski/enums.c
+END
+enums.h_
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/13/trunk/ski/enums.h_
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/13/trunk/ski/Makefile
+END

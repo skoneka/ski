@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 53
+CMakeCache.txt
+cmake_install.cmake
+maintest
+ski
+wars
+
+END

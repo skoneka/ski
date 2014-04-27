@@ -1,0 +1,18 @@
+#ifndef _DEFINE_H_
+#define _DEFINE_H_
+
+#define STATE_ALIVE 1000
+#define STATE_DEAD 1001
+#define STATE_EXITING 1002
+#define STATE_MENU 1003
+#define STATE_HELP 1004
+#define STATE_RESTART 1005
+
+#define DPLAYERX MAPCOLS/2
+#define DPLAYERY MAPROWS-5
+
+
+#define MAPCOLS 60
+#define MAPROWS 30
+
+#endif // _DEFINE_H_

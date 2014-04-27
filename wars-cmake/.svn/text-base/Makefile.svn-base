@@ -1,0 +1,34 @@
+OBJS = main.o map.o screens.o state.o util.o stats.o player.o
+SRCS = main.c map.c screens.c state.c util.c stats.c player.c
+CC=gcc
+LIBS=-lncurses
+CFLAGS = -Wall -c -std=c99
+LFLAGS = -Wall $(LIBS)
+DEBUG = -g
+
+
+
+#main.o: main.c map.h state.h define.h util.h
+
+#map.o: map.c map.h
+
+#screens.o: screens.c screens.h
+
+#state.o: state.c state.h
+
+#util.o: util.c util.h
+
+
+all: ski
+	
+ski: $(OBJS)
+	$(CC) $(DEBUG) $(LFLAGS) $(OBJS) -o ski
+
+debug: $(OBJS)
+	$(CC) $(DEBUG) $(LFLAGS) $(OBJS) -o dbgski
+
+clean:
+	\rm *.o *~ ski dbgski
+.PHONY: all
+.PHONY: clean
+	
